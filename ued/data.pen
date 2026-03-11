@@ -1,0 +1,1653 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "YQGRB",
+      "x": 0,
+      "y": 0,
+      "name": "问数首页",
+      "width": 1440,
+      "height": 900,
+      "fill": "#FFFFFF",
+      "children": [
+        {
+          "type": "frame",
+          "id": "YHVr0",
+          "name": "侧边栏",
+          "width": 280,
+          "height": "fill_container",
+          "fill": "#F8FAFC",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wFD4f",
+              "x": 16,
+              "y": 16,
+              "name": "Logo区域",
+              "width": "fill_container(248)",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "wrfqg",
+                  "name": "Logo图标",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "brain-circuit",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6366F1"
+                },
+                {
+                  "type": "text",
+                  "id": "dBaUg",
+                  "name": "Logo文字",
+                  "fill": "#1E293B",
+                  "content": "问数",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YHtkq",
+              "x": 16,
+              "y": 58,
+              "name": "新建对话按钮",
+              "width": "fill_container(248)",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "gap": 10,
+              "padding": [
+                10,
+                14
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "PkVM9",
+                  "name": "加号图标",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#64748B"
+                },
+                {
+                  "type": "text",
+                  "id": "t74y8",
+                  "name": "新建对话文字",
+                  "fill": "#475569",
+                  "content": "新建对话",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "puxGd",
+              "x": 16,
+              "y": 114,
+              "name": "分割线1",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "5xyu6",
+              "x": 16,
+              "y": 131,
+              "name": "数据集管理",
+              "width": "fill_container(248)",
+              "fill": "#F1F5F9",
+              "cornerRadius": 8,
+              "gap": 12,
+              "padding": [
+                8,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "1Mhu1",
+                  "name": "数据库图标",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "database",
+                  "iconFontFamily": "lucide",
+                  "fill": "#64748B"
+                },
+                {
+                  "type": "text",
+                  "id": "LIgjt",
+                  "name": "数据集文字",
+                  "fill": "#64748B",
+                  "content": "数据集管理",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "P0Zsc",
+              "x": 16,
+              "y": 183,
+              "name": "分割线2",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "8dczr",
+              "x": 16,
+              "y": 200,
+              "name": "历史标题",
+              "fill": "#94A3B8",
+              "content": "历史对话",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "E5L5Q",
+              "x": 16,
+              "y": 232,
+              "name": "历史列表",
+              "width": "fill_container(248)",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ga4AF",
+                  "name": "历史项1",
+                  "width": "fill_container",
+                  "fill": "#F1F5F9",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Kf7PK",
+                      "name": "消息图标1",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#8B5CF6"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fu64B",
+                      "name": "历史文字1",
+                      "fill": "#334155",
+                      "content": "2024年销售数据分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0SdD9",
+                  "name": "历史项2",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1mKA3",
+                      "name": "消息图标2",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2BilW",
+                      "name": "历史文字2",
+                      "fill": "#64748B",
+                      "content": "用户活跃度统计报表",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RoSRm",
+                  "name": "历史项3",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "0AUZ3",
+                      "name": "消息图标3",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lY9bn",
+                      "name": "历史文字3",
+                      "fill": "#64748B",
+                      "content": "Q3财务报表分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qvQwK",
+                  "name": "历史项4",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "GCnGj",
+                      "name": "消息图标4",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5YS9z",
+                      "name": "历史文字4",
+                      "fill": "#64748B",
+                      "content": "区域销售对比分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1Q9kR",
+              "x": 16,
+              "y": 780,
+              "name": "底部工具区",
+              "width": "fill_container(248)",
+              "padding": [
+                8,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Qe1iW",
+                  "name": "左侧工具",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bqRs4",
+                      "name": "设置按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Pw6xD",
+                          "name": "设置图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "settings",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zubdg",
+                      "name": "帮助按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "rLayW",
+                          "name": "帮助图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "message-circle-question",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rZyUa",
+                      "name": "搜索按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "yVbRI",
+                          "name": "搜索图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "search",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "2zz3b",
+              "x": 16,
+              "y": 830,
+              "name": "底部分割线",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "upMpP",
+              "x": 16,
+              "y": 835,
+              "name": "用户信息卡片",
+              "width": "fill_container(248)",
+              "fill": "#00000000",
+              "cornerRadius": 8,
+              "gap": 10,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4EAp8",
+                  "name": "用户头像",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#6366F1",
+                  "cornerRadius": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wdug6",
+                      "name": "头像文字",
+                      "fill": "#FFFFFF",
+                      "content": "张",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2KZl3",
+                  "name": "用户信息",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RdWbS",
+                      "name": "用户名",
+                      "fill": "#1E293B",
+                      "content": "张三",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BdVjp",
+                      "name": "用户邮箱",
+                      "fill": "#64748B",
+                      "content": "zhangsan@company.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PGwOa",
+                  "name": "更多按钮",
+                  "width": 28,
+                  "height": 28,
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "onDIr",
+                      "name": "更多图标",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "ellipsis",
+                      "iconFontFamily": "lucide",
+                      "fill": "#64748B"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tLbW9",
+          "name": "主内容区",
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            48,
+            60
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ubNVu",
+              "name": "欢迎区域",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "7kpvN",
+                  "name": "欢迎标题",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 135,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#6366F1",
+                        "position": 0
+                      },
+                      {
+                        "color": "#8B5CF6",
+                        "position": 0.5
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "content": "你好，我是问数",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "WNZFW",
+                  "name": "欢迎副标题",
+                  "fill": "#64748B",
+                  "content": "有什么数据问题，尽管问我",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IkNPl",
+              "name": "快捷操作",
+              "gap": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ORbhS",
+                  "name": "卡片1",
+                  "width": 190,
+                  "height": 130,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1aTvt",
+                      "name": "分析图标",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "chart-column",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6366F1"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IDL5M",
+                      "name": "分析文字",
+                      "fill": "#1E293B",
+                      "content": "数据趋势分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wMXr0",
+                      "name": "分析描述",
+                      "fill": "#64748B",
+                      "content": "探索数据变化趋势",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kn51a",
+                  "name": "卡片2",
+                  "width": 190,
+                  "height": 130,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "8MbCm",
+                      "name": "报表图标",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "file-text",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3B82F6"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tqjVI",
+                      "name": "报表文字",
+                      "fill": "#1E293B",
+                      "content": "生成报表",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fox0r",
+                      "name": "报表描述",
+                      "fill": "#64748B",
+                      "content": "一键生成数据报表",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LXHdj",
+                  "name": "卡片3",
+                  "width": 190,
+                  "height": 130,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "SrTML",
+                      "name": "对比图标",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "git-compare",
+                      "iconFontFamily": "lucide",
+                      "fill": "#10B981"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BcIGB",
+                      "name": "对比文字",
+                      "fill": "#1E293B",
+                      "content": "数据对比",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ll6XA",
+                      "name": "对比描述",
+                      "fill": "#64748B",
+                      "content": "多维度数据对比",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "22ftQ",
+                  "name": "卡片4",
+                  "width": 190,
+                  "height": 130,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ByJpA",
+                      "name": "预测图标",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "trending-up",
+                      "iconFontFamily": "lucide",
+                      "fill": "#F59E0B"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Crhf8",
+                      "name": "预测文字",
+                      "fill": "#1E293B",
+                      "content": "趋势预测",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "KUVko",
+                      "name": "预测描述",
+                      "fill": "#64748B",
+                      "content": "智能预测未来趋势",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bANNL",
+              "name": "输入区域",
+              "width": 720,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "layout": "vertical",
+              "padding": [
+                16,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qGZB8",
+                  "name": "输入框",
+                  "fill": "#94A3B8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "输入你的数据问题...",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "48hmq",
+                  "name": "工具栏",
+                  "width": "fill_container",
+                  "padding": [
+                    12,
+                    0,
+                    0,
+                    0
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vVBEI",
+                      "name": "左侧工具",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "7XHjh",
+                          "name": "附件按钮",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E2E8F0"
+                          },
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "qxscA",
+                              "name": "附件图标",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "paperclip",
+                              "iconFontFamily": "lucide",
+                              "fill": "#64748B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hSbfT",
+                      "name": "发送按钮",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F172A",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "NwKEv",
+                          "name": "发送图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "arrow-up",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WqhYP",
+      "x": 1540,
+      "y": 0,
+      "name": "数据集管理页面",
+      "width": 1440,
+      "height": 900,
+      "fill": "#FFFFFF",
+      "children": [
+        {
+          "type": "frame",
+          "id": "EwA37",
+          "name": "侧边栏",
+          "width": 280,
+          "height": "fill_container",
+          "fill": "#F8FAFC",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "s4oHU",
+              "x": 16,
+              "y": 16,
+              "name": "Logo区域",
+              "width": "fill_container(248)",
+              "height": "fit_content(26)",
+              "gap": 12,
+              "alignItems": "center"
+            },
+            {
+              "type": "frame",
+              "id": "J3fx6",
+              "x": 16,
+              "y": 58,
+              "name": "新建对话按钮",
+              "width": "fill_container(248)",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "gap": 10,
+              "padding": [
+                10,
+                14
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "UCFju",
+                  "name": "加号图标",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "plus",
+                  "iconFontFamily": "lucide",
+                  "fill": "#64748B"
+                },
+                {
+                  "type": "text",
+                  "id": "vh6ak",
+                  "name": "新建对话文字",
+                  "fill": "#475569",
+                  "content": "新建对话",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "hMEBF",
+              "x": 16,
+              "y": 114,
+              "name": "分割线1",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "OiDHx",
+              "x": 16,
+              "y": 131,
+              "name": "数据集管理-选中",
+              "width": "fill_container(248)",
+              "fill": "#F1F5F9",
+              "cornerRadius": 8,
+              "gap": 12,
+              "padding": [
+                8,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "oIDmZ",
+                  "name": "数据库图标",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "database",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6366F1"
+                },
+                {
+                  "type": "text",
+                  "id": "CLKEr",
+                  "name": "数据集文字",
+                  "fill": "#334155",
+                  "content": "数据集管理",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "3VXnm",
+              "x": 16,
+              "y": 183,
+              "name": "分割线2",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "spfIz",
+              "x": 16,
+              "y": 200,
+              "name": "历史标题",
+              "fill": "#94A3B8",
+              "content": "历史对话",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "oeUNR",
+              "x": 16,
+              "y": 232,
+              "name": "历史列表",
+              "width": "fill_container(248)",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gUMBV",
+                  "name": "历史项1",
+                  "width": "fill_container",
+                  "fill": "#F1F5F9",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "T3aIQ",
+                      "name": "消息图标1",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#8B5CF6"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Zj2hg",
+                      "name": "历史文字1",
+                      "fill": "#334155",
+                      "content": "2024年销售数据分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "s1IPP",
+                  "name": "历史项2",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "XERka",
+                      "name": "消息图标2",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Jj3TH",
+                      "name": "历史文字2",
+                      "fill": "#64748B",
+                      "content": "用户活跃度统计报表",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uyjMe",
+                  "name": "历史项3",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "11u3a",
+                      "name": "消息图标3",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Y2CEB",
+                      "name": "历史文字3",
+                      "fill": "#64748B",
+                      "content": "Q3财务报表分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "679iJ",
+                  "name": "历史项4",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "gap": 10,
+                  "padding": [
+                    8,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "1fr6X",
+                      "name": "消息图标4",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "message-square",
+                      "iconFontFamily": "lucide",
+                      "fill": "#94A3B8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6nfNQ",
+                      "name": "历史文字4",
+                      "fill": "#64748B",
+                      "content": "区域销售对比分析",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Bh8Rv",
+              "x": 16,
+              "y": 780,
+              "name": "底部工具区",
+              "width": "fill_container(248)",
+              "padding": [
+                8,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XUfoE",
+                  "name": "左侧工具",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "90jbB",
+                      "name": "设置按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "RyDUa",
+                          "name": "设置图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "settings",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UgfSE",
+                      "name": "帮助按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "85p27",
+                          "name": "帮助图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "message-circle-question",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zx3oC",
+                      "name": "搜索按钮",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "#00000000",
+                      "cornerRadius": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "WQwrN",
+                          "name": "搜索图标",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "search",
+                          "iconFontFamily": "lucide",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "w7RKg",
+              "x": 16,
+              "y": 830,
+              "name": "底部分割线",
+              "fill": "#E2E8F0",
+              "width": "fill_container(248)",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "EByjM",
+              "x": 16,
+              "y": 835,
+              "name": "用户信息卡片",
+              "width": "fill_container(248)",
+              "fill": "#00000000",
+              "cornerRadius": 8,
+              "gap": 10,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xIuZn",
+                  "name": "用户头像",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#6366F1",
+                  "cornerRadius": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "6Kr5q",
+                      "name": "头像文字",
+                      "fill": "#FFFFFF",
+                      "content": "张",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eXgWi",
+                  "name": "用户信息",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "L4T5G",
+                      "name": "用户名",
+                      "fill": "#1E293B",
+                      "content": "张三",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rEXs4",
+                      "name": "用户邮箱",
+                      "fill": "#64748B",
+                      "content": "zhangsan@company.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lNP2y",
+                  "name": "更多按钮",
+                  "width": 28,
+                  "height": 28,
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "U0grs",
+                      "name": "更多图标",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "ellipsis",
+                      "iconFontFamily": "lucide",
+                      "fill": "#64748B"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "liCuy",
+          "name": "主内容区",
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            32,
+            40
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "OEdeY",
+              "name": "页面标题栏",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "icoFH",
+                  "name": "页面标题",
+                  "fill": "#1E293B",
+                  "content": "数据集管理",
+                  "fontFamily": "Plus Jakarta Sans",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "IPCPJ",
+                  "name": "操作区",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NUnze",
+                      "name": "搜索框",
+                      "width": 280,
+                      "height": 40,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E2E8F0"
+                      },
+                      "gap": 10,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "LhTQ2",
+                          "name": "搜索图标",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "search",
+                          "iconFontFamily": "lucide",
+                          "fill": "#94A3B8"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3Z4lD",
+                          "name": "搜索提示",
+                          "fill": "#94A3B8",
+                          "content": "搜索数据集...",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n2ukE",
+                      "name": "新建数据集按钮",
+                      "fill": "#0F172A",
+                      "cornerRadius": 8,
+                      "gap": 8,
+                      "padding": [
+                        10,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "FdKuT",
+                          "name": "上传图标",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "upload",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "flEZn",
+                          "name": "新建按钮文字",
+                          "fill": "#FFFFFF",
+                          "content": "新建数据集",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "llIh2",
+              "name": "空状态区域",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wxjX0",
+                  "name": "空状态图标容器",
+                  "width": 120,
+                  "height": 120,
+                  "fill": "#F8FAFC",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "WvOiH",
+                      "name": "空状态图标",
+                      "width": 48,
+                      "height": 48,
+                      "iconFontName": "database",
+                      "iconFontFamily": "lucide",
+                      "fill": "#CBD5E1"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cXswl",
+                  "name": "空状态文字区",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NXWuu",
+                      "name": "空状态标题",
+                      "fill": "#334155",
+                      "content": "暂无数据集",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BSgPl",
+                      "name": "空状态描述",
+                      "fill": "#64748B",
+                      "content": "点击上方按钮创建你的第一个数据集",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kmTbL",
+                  "name": "空状态按钮",
+                  "fill": "#0F172A",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "CG4xH",
+                      "name": "按钮图标",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "plus",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1aDnu",
+                      "name": "按钮文字",
+                      "fill": "#FFFFFF",
+                      "content": "创建数据集",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
