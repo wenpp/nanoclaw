@@ -6,13 +6,35 @@ import { readEnvFile } from './env.js';
 // Read config values from .env (falls back to process.env).
 // Secrets (API keys, tokens) are NOT read here — they are loaded only
 // by the credential proxy (credential-proxy.ts), never exposed to containers.
-const envConfig = readEnvFile(['ASSISTANT_NAME', 'ASSISTANT_HAS_OWN_NUMBER']);
+const envConfig = readEnvFile([
+  'ASSISTANT_NAME',
+  'ASSISTANT_HAS_OWN_NUMBER',
+  'CLAUDE_CODE_MODEL',
+  'WEB_API_KEY',
+  'ANTHROPIC_DEFAULT_HAIKU_MODEL',
+  'ANTHROPIC_DEFAULT_OPUS_MODEL',
+  'ANTHROPIC_DEFAULT_SONNET_MODEL',
+  'ANTHROPIC_MODEL',
+]);
 
 export const ASSISTANT_NAME =
   process.env.ASSISTANT_NAME || envConfig.ASSISTANT_NAME || 'Andy';
 export const ASSISTANT_HAS_OWN_NUMBER =
   (process.env.ASSISTANT_HAS_OWN_NUMBER ||
     envConfig.ASSISTANT_HAS_OWN_NUMBER) === 'true';
+export const CLAUDE_CODE_MODEL =
+  process.env.CLAUDE_CODE_MODEL || envConfig.CLAUDE_CODE_MODEL;
+
+// Anthropic model overrides for API proxy compatibility (e.g., Kimi)
+export const ANTHROPIC_DEFAULT_HAIKU_MODEL =
+  process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL || envConfig.ANTHROPIC_DEFAULT_HAIKU_MODEL;
+export const ANTHROPIC_DEFAULT_OPUS_MODEL =
+  process.env.ANTHROPIC_DEFAULT_OPUS_MODEL || envConfig.ANTHROPIC_DEFAULT_OPUS_MODEL;
+export const ANTHROPIC_DEFAULT_SONNET_MODEL =
+  process.env.ANTHROPIC_DEFAULT_SONNET_MODEL || envConfig.ANTHROPIC_DEFAULT_SONNET_MODEL;
+export const ANTHROPIC_MODEL =
+  process.env.ANTHROPIC_MODEL || envConfig.ANTHROPIC_MODEL;
+
 export const POLL_INTERVAL = 2000;
 export const SCHEDULER_POLL_INTERVAL = 60000;
 
@@ -71,3 +93,12 @@ export const TRIGGER_PATTERN = new RegExp(
 // Uses system timezone by default
 export const TIMEZONE =
   process.env.TZ || Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+// Web Channel Configuration
+export const WEB_API_KEY = process.env.WEB_API_KEY || envConfig.WEB_API_KEY;
+export const WEB_PORT = parseInt(process.env.WEB_PORT || '8080', 10);
+export const WEB_HOST = process.env.WEB_HOST || '0.0.0.0';
+export const SHARED_UPLOADS_DIR =
+  process.env.SHARED_UPLOADS_DIR || '/shared/uploads';
+export const SHARED_OUTPUTS_DIR =
+  process.env.SHARED_OUTPUTS_DIR || '/shared/outputs';

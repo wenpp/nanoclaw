@@ -7,6 +7,11 @@ import fs from 'fs';
 import path from 'path';
 
 import {
+  ANTHROPIC_DEFAULT_HAIKU_MODEL,
+  ANTHROPIC_DEFAULT_OPUS_MODEL,
+  ANTHROPIC_DEFAULT_SONNET_MODEL,
+  ANTHROPIC_MODEL,
+  CLAUDE_CODE_MODEL,
   CONTAINER_IMAGE,
   CONTAINER_MAX_OUTPUT_SIZE,
   CONTAINER_TIMEOUT,
@@ -138,6 +143,23 @@ function buildVolumeMounts(
             // Enable Claude's memory feature (persists user preferences between sessions)
             // https://code.claude.com/docs/en/memory#manage-auto-memory
             CLAUDE_CODE_DISABLE_AUTO_MEMORY: '0',
+            // Model selection (optional, defaults to claude-sonnet-4)
+            ...(CLAUDE_CODE_MODEL && {
+              CLAUDE_CODE_MODEL,
+            }),
+            // Anthropic model overrides for API proxy compatibility (e.g., Kimi)
+            ...(ANTHROPIC_DEFAULT_HAIKU_MODEL && {
+              ANTHROPIC_DEFAULT_HAIKU_MODEL,
+            }),
+            ...(ANTHROPIC_DEFAULT_OPUS_MODEL && {
+              ANTHROPIC_DEFAULT_OPUS_MODEL,
+            }),
+            ...(ANTHROPIC_DEFAULT_SONNET_MODEL && {
+              ANTHROPIC_DEFAULT_SONNET_MODEL,
+            }),
+            ...(ANTHROPIC_MODEL && {
+              ANTHROPIC_MODEL,
+            }),
           },
         },
         null,
@@ -236,6 +258,25 @@ function buildContainerArgs(
     args.push('-e', 'ANTHROPIC_API_KEY=placeholder');
   } else {
     args.push('-e', 'CLAUDE_CODE_OAUTH_TOKEN=placeholder');
+  }
+
+  // Pass model selection to container if configured
+  if (CLAUDE_CODE_MODEL) {
+    args.push('-e', `CLAUDE_CODE_MODEL=${CLAUDE_CODE_MODEL}`);
+  }
+
+  // Pass Anthropic model overrides for API proxy compatibility
+  if (ANTHROPIC_DEFAULT_HAIKU_MODEL) {
+    args.push('-e', `ANTHROPIC_DEFAULT_HAIKU_MODEL=${ANTHROPIC_DEFAULT_HAIKU_MODEL}`);
+  }
+  if (ANTHROPIC_DEFAULT_OPUS_MODEL) {
+    args.push('-e', `ANTHROPIC_DEFAULT_OPUS_MODEL=${ANTHROPIC_DEFAULT_OPUS_MODEL}`);
+  }
+  if (ANTHROPIC_DEFAULT_SONNET_MODEL) {
+    args.push('-e', `ANTHROPIC_DEFAULT_SONNET_MODEL=${ANTHROPIC_DEFAULT_SONNET_MODEL}`);
+  }
+  if (ANTHROPIC_MODEL) {
+    args.push('-e', `ANTHROPIC_MODEL=${ANTHROPIC_MODEL}`);
   }
 
   // Runtime-specific args for host gateway resolution
