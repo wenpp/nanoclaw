@@ -283,6 +283,15 @@ export async function executeTask(
         logger.debug({ containerName }, 'Container started');
       },
       async (output) => {
+        // 处理思考过程（progress 事件）
+        if (output.status === 'progress' && output.progress?.type === 'thinking') {
+          onEvent({
+            type: 'thinking',
+            content: output.progress.content,
+          });
+          return;
+        }
+
         // Convert container output to SSE events
         if (output.result) {
           accumulatedContent += output.result;

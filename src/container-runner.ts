@@ -39,6 +39,10 @@ import { RegisteredGroup } from './types.js';
 const OUTPUT_START_MARKER = '---NANOCLAW_OUTPUT_START---';
 const OUTPUT_END_MARKER = '---NANOCLAW_OUTPUT_END---';
 
+// Progress markers for streaming thinking events
+const PROGRESS_START_MARKER = '---NANOCLAW_PROGRESS_START---';
+const PROGRESS_END_MARKER = '---NANOCLAW_PROGRESS_END---';
+
 export interface ContainerInput {
   prompt: string;
   sessionId?: string;
@@ -50,10 +54,11 @@ export interface ContainerInput {
 }
 
 export interface ContainerOutput {
-  status: 'success' | 'error';
+  status: 'success' | 'error' | 'progress';
   result: string | null;
   newSessionId?: string;
   error?: string;
+  progress?: { type: string; content: string; timestamp: number };
 }
 
 interface VolumeMount {
@@ -397,9 +402,40 @@ export async function runContainerAgent(
         }
       }
 
-      // Stream-parse for output markers
+      // Stream-parse for progress markers (thinking events)
       if (onOutput) {
         parseBuffer += chunk;
+
+        // Parse progress events first
+        let pStart: number;
+        while ((pStart = parseBuffer.indexOf(PROGRESS_START_MARKER)) !== -1) {
+          const pEnd = parseBuffer.indexOf(PROGRESS_END_MARKER, pStart);
+          if (pEnd === -1) break; // Incomplete pair, wait for more data
+
+          const jsonStr = parseBuffer
+            .slice(pStart + PROGRESS_START_MARKER.length, pEnd)
+            .trim();
+          parseBuffer = parseBuffer.slice(0, pStart) + parseBuffer.slice(pEnd + PROGRESS_END_MARKER.length);
+
+          try {
+            const progress = JSON.parse(jsonStr) as { type: string; content: string; timestamp: number };
+            // Send progress event via onOutput
+            outputChain = outputChain.then(() =>
+              onOutput({
+                status: 'progress',
+                result: null,
+                progress,
+              } as ContainerOutput),
+            );
+          } catch (err) {
+            logger.warn(
+              { group: group.name, error: err },
+              'Failed to parse progress event',
+            );
+          }
+        }
+
+        // Parse output markers
         let startIdx: number;
         while ((startIdx = parseBuffer.indexOf(OUTPUT_START_MARKER)) !== -1) {
           const endIdx = parseBuffer.indexOf(OUTPUT_END_MARKER, startIdx);

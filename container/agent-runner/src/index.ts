@@ -113,6 +113,15 @@ function writeOutput(output: ContainerOutput): void {
   console.log(OUTPUT_END_MARKER);
 }
 
+const PROGRESS_START_MARKER = '---NANOCLAW_PROGRESS_START---';
+const PROGRESS_END_MARKER = '---NANOCLAW_PROGRESS_END---';
+
+function writeProgress(type: string, content: string): void {
+  console.log(PROGRESS_START_MARKER);
+  console.log(JSON.stringify({ type, content, timestamp: Date.now() }));
+  console.log(PROGRESS_END_MARKER);
+}
+
 function log(message: string): void {
   console.error(`[agent-runner] ${message}`);
 }
@@ -445,6 +454,21 @@ async function runQuery(
     if (message.type === 'system' && (message as { subtype?: string }).subtype === 'task_notification') {
       const tn = message as { task_id: string; status: string; summary: string };
       log(`Task notification: task=${tn.task_id} status=${tn.status} summary=${tn.summary}`);
+    }
+
+    // 输出思考过程（assistant 的流式内容）
+    if (message.type === 'assistant') {
+      const assistantMsg = message as unknown as { content?: Array<{ type: string; text?: string }> };
+      if (Array.isArray(assistantMsg.content)) {
+        const textContent = assistantMsg.content
+          .filter((c) => c.type === 'text')
+          .map((c) => c.text || '')
+          .join('');
+
+        if (textContent) {
+          writeProgress('thinking', textContent);
+        }
+      }
     }
 
     if (message.type === 'result') {
