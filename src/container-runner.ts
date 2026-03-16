@@ -19,6 +19,7 @@ import {
   DATA_DIR,
   GROUPS_DIR,
   IDLE_TIMEOUT,
+  SHARED_UPLOADS_DIR,
   TIMEZONE,
 } from './config.js';
 import { resolveGroupFolderPath, resolveGroupIpcPath } from './group-folder.js';
@@ -220,6 +221,17 @@ function buildVolumeMounts(
     containerPath: '/app/src',
     readonly: false,
   });
+
+  // Mount shared uploads directory so symlinks in task uploads/ work inside container
+  // Web channel creates symlinks from taskDir/uploads/ -> SHARED_UPLOADS_DIR
+  // The symlinks use absolute paths, so we mount the uploads dir to the same absolute path
+  if (fs.existsSync(SHARED_UPLOADS_DIR)) {
+    mounts.push({
+      hostPath: SHARED_UPLOADS_DIR,
+      containerPath: SHARED_UPLOADS_DIR,
+      readonly: true,
+    });
+  }
 
   // Additional mounts validated against external allowlist (tamper-proof from containers)
   if (group.containerConfig?.additionalMounts) {

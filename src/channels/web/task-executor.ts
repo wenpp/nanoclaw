@@ -48,9 +48,13 @@ interface SkillInfo {
 }
 
 /**
- * Build system prompt from context and user prompt
+ * Build system prompt from context, files and user prompt
  */
-function buildPrompt(userPrompt: string, context?: ExecuteOptions['context']): string {
+function buildPrompt(
+  userPrompt: string,
+  files: string[] = [],
+  context?: ExecuteOptions['context']
+): string {
   const parts: string[] = [];
 
   // Add context summary if provided
@@ -63,6 +67,21 @@ function buildPrompt(userPrompt: string, context?: ExecuteOptions['context']): s
     for (const msg of context.messages) {
       parts.push(`<${msg.role}>${msg.content}</${msg.role}>`);
     }
+  }
+
+  // Add available files information
+  if (files.length > 0) {
+    const fileList = files.map(f => {
+      const fileName = path.basename(f);
+      return `- ${fileName} (路径: /workspace/group/uploads/${fileName})`;
+    }).join('\n');
+
+    parts.push(`<available_files>
+以下文件已上传并可供分析：
+${fileList}
+
+你可以在分析中使用这些文件。使用 Bash 工具读取文件内容（如 cat, head, xlsx2csv 等）。
+</available_files>`);
   }
 
   // Add current user prompt
@@ -108,6 +127,7 @@ function copySkills(skills: string[], taskSkillsDir: string): void {
 
 /**
  * Create file symlinks in task directory
+ * Preserves relative directory structure from SHARED_UPLOADS_DIR to avoid conflicts
  */
 function createFileLinks(files: string[], taskUploadsDir: string): void {
   fs.mkdirSync(taskUploadsDir, { recursive: true });
@@ -117,24 +137,34 @@ function createFileLinks(files: string[], taskUploadsDir: string): void {
     const resolvedPath = path.resolve(filePath);
     const uploadsDir = path.resolve(SHARED_UPLOADS_DIR);
 
+    logger.debug({ resolvedPath, uploadsDir, filePath }, 'Validating file path');
+
     if (!resolvedPath.startsWith(uploadsDir)) {
-      logger.warn({ filePath }, 'File path outside shared uploads directory, skipping');
+      logger.warn(
+        { filePath, resolvedPath, uploadsDir },
+        'File path outside shared uploads directory, skipping'
+      );
       continue;
     }
 
     if (!fs.existsSync(resolvedPath)) {
-      logger.warn({ filePath }, 'File does not exist, skipping');
+      logger.warn({ filePath, resolvedPath }, 'File does not exist, skipping');
       continue;
     }
 
-    const fileName = path.basename(resolvedPath);
-    const linkPath = path.join(taskUploadsDir, fileName);
+    // Preserve relative directory structure (e.g., {user_id}/filename.xlsx)
+    const relativePath = path.relative(uploadsDir, resolvedPath);
+    const linkPath = path.join(taskUploadsDir, relativePath);
+
+    // Ensure parent directories exist
+    const linkDir = path.dirname(linkPath);
+    fs.mkdirSync(linkDir, { recursive: true });
 
     try {
       fs.symlinkSync(resolvedPath, linkPath);
-      logger.debug({ filePath, linkPath }, 'Created file symlink');
+      logger.info({ filePath, linkPath, relativePath }, 'Created file symlink');
     } catch (err) {
-      logger.warn({ filePath, error: err }, 'Failed to create file symlink');
+      logger.warn({ filePath, linkPath, error: err }, 'Failed to create file symlink');
     }
   }
 }
@@ -142,18 +172,25 @@ function createFileLinks(files: string[], taskUploadsDir: string): void {
 /**
  * Generate CLAUDE.md for the task
  */
-function generateClaudeMd(taskDir: string, skills: string[]): void {
+function generateClaudeMd(taskDir: string, skills: string[], files: string[] = []): void {
   const skillsSection = skills.length > 0
     ? `\n## Available Skills\n\n${skills.map(s => `- ${s}`).join('\n')}`
     : '';
 
+  const filesSection = files.length > 0
+    ? `\n## Uploaded Files\n\nThe following files are available in \`/workspace/group/uploads/\`:\n\n${files.map(f => {
+      const relPath = path.relative(SHARED_UPLOADS_DIR, f);
+      return `- \`${relPath}\` → \`/workspace/group/uploads/${relPath}\``;
+    }).join('\n')}`
+    : '';
+
   const content = `# Task Session
 
-This is a web channel task session.${skillsSection}
+This is a web channel task session.${skillsSection}${filesSection}
 
 ## File Access
 
-Uploaded files are available in the /workspace/group/uploads/ directory.
+Uploaded files are available in the /workspace/group/uploads/ directory with their original directory structure preserved.
 `;
 
   fs.writeFileSync(path.join(taskDir, 'CLAUDE.md'), content);
@@ -202,10 +239,10 @@ export async function executeTask(
     }
 
     // Generate CLAUDE.md
-    generateClaudeMd(taskDir, skills);
+    generateClaudeMd(taskDir, skills, files);
 
-    // Build prompt with context
-    const fullPrompt = buildPrompt(prompt, context);
+    // Build prompt with context and files
+    const fullPrompt = buildPrompt(prompt, files, context);
 
     // Create a mock RegisteredGroup for container execution
     // Note: folder must be a valid name (no /, \, ..)

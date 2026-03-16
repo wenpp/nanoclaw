@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(npm run build:*)",
+      "Bash(lsof:*)",
+      "Bash(node -e:*)",
+      "Bash(launchctl list:*)",
+      "Bash(launchctl unload:*)",
+      "Bash(launchctl load:*)"
+    ]
+  }
+}

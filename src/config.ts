@@ -15,6 +15,7 @@ const envConfig = readEnvFile([
   'ANTHROPIC_DEFAULT_OPUS_MODEL',
   'ANTHROPIC_DEFAULT_SONNET_MODEL',
   'ANTHROPIC_MODEL',
+  'SHARED_UPLOADS_DIR',
 ]);
 
 export const ASSISTANT_NAME =
@@ -99,6 +100,6 @@ export const WEB_API_KEY = process.env.WEB_API_KEY || envConfig.WEB_API_KEY;
 export const WEB_PORT = parseInt(process.env.WEB_PORT || '8080', 10);
 export const WEB_HOST = process.env.WEB_HOST || '0.0.0.0';
 export const SHARED_UPLOADS_DIR =
-  process.env.SHARED_UPLOADS_DIR || '/shared/uploads';
+  process.env.SHARED_UPLOADS_DIR || envConfig.SHARED_UPLOADS_DIR || '/shared/uploads';
 export const SHARED_OUTPUTS_DIR =
   process.env.SHARED_OUTPUTS_DIR || '/shared/outputs';
